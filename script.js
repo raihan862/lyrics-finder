@@ -31,10 +31,10 @@ function findSongs() {
                         var albumName = document.getElementById("album");
                         var author = document.getElementById("author");
                         var button = document.getElementById("result");
-                        button.style.disabled="false";
+                        
                         if (count == 0) {
                             
-
+                            button.innerHTML="Get Lyrics";
                             name.innerHTML = title;
                             author.innerHTML = artistName;
                             albumName.innerHTML = albumNameInput;
@@ -71,7 +71,7 @@ function findlyric(evt) {
     var grandParent = evt.parentNode.parentNode;
     const artist = grandParent.getElementsByTagName("span")[0].innerHTML;
     let title = grandParent.getElementsByTagName("h3")[0].innerHTML;
-
+     
     const resultTitle = document.getElementById("result-title");
     const lyric = document.getElementById("lyrics");
     resultTitle.innerHTML=`${artist} - ${title}`
@@ -88,7 +88,7 @@ function findlyric(evt) {
             } else {
 
                 evt.innerHTML="Not Available"
-                evt.disabled="true"
+                 
                 lyric.innerHTML = "This lyric is not available"
             }
 
