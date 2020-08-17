@@ -4,7 +4,7 @@ function findSongs() {
     parent.style.display = "none";
     document.getElementById("lyrics").innerHTML = "";
     let child = document.getElementsByClassName("child");
-    
+
     for (let index = 1; index < child.length;) {
         child[index].remove();
 
@@ -72,7 +72,10 @@ function findlyric(evt) {
     const artist = grandParent.getElementsByTagName("span")[0].innerHTML;
     let title = grandParent.getElementsByTagName("h3")[0].innerHTML;
 
+    const resultTitle = document.getElementById("result-title");
     const lyric = document.getElementById("lyrics");
+    resultTitle.innerHTML=`${artist} - ${title}`
+
     lyric.innerHTML = "";
     const url = `https://api.lyrics.ovh/v1/${artist}/${title}`;
     fetch(url)
